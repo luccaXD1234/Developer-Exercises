@@ -1,41 +1,58 @@
-from random import *
+import math 
+import sys
+
+class Circulos :
+    def __init__(self, radio):
+        self.radio = radio
+    def __str__(self):
+        return("\nya creamos un circulo nuevo con un radio de "f"{self.radio}""cm , ahora calcularemos el area y el perimetro ")
+
+
+    def area(self):
+        resultadoA =math.pi*self.radio**2
+        return resultadoA
+    
+    def Perimetro(self):
+        resultadoP=math.pi*2*self.radio
+        return resultadoP
+
+    def calc(self):
+        resultadoC = self.radio * n
+        return resultadoC
+
+
+# Crear una instancia de la clase Sumadora con los números 5 y 7
+
+print("\n\nvoy a calcular el perimetro y area de un circulo por usted ")
+r=int(input("ingrese el radio : "))
+if r==0:
+    print(  "\n\n----error---- \nno podremos hacer su calculo ya que ingreso un 0 y no se puede calcular el radio, ni el perimetro  ")
+    sys.exit()
+if r<0:
+    print(  "\n\n----error---- \nno podremos hacer su calculo ya que ingreso un numero negrativo y no se puede calcular el radio ni el perimetro  ")
+    sys.exit()
+circulo1 = Circulos(r)
+
+
+# llamar metodos 
+resultadoA = circulo1.area()
+resultadoP = circulo1.Perimetro()
+
+# ver si se quiere multiplicar el r por algun numero 
+
+m=int(input("ingrese 1 si desea multiplicar el circulo por un numero, si no cualquier otro valor : "))
+if m ==1:
+    n=int(input("ingrese el numero que quiere multiplicar por el radio"))
+    resultadoC= circulo1.calc()
+    print("\nel resultado del radio por su numero es :",resultadoC )
+
+
+#imprimir 
+print(circulo1)       
+print("Area :" ,resultadoA)
+print("Perimetro :",resultadoP)
 
 
 
-def mariz(n,m):   
-    mat = [ [0] * n for i in range(m)]
-    print(mat)
-
-    for i in range(m):
-        for j in range(n):
-            mat[i][j]=randint(1, 10)
-    return mat
 
 
-
-def resolverF(mat,n,m):
-    for i in range(4):
-        for j in range(4):
-            if mat[i][j]==mat[i+1][j]:
-                print("caca")
-    return()
-
-
-def resolverC(mat,n,m):
-    pass
-    return()
-           
-
-
-def main():
-
-    print("hola")
-    n=5
-    m=5
-    mat = mariz(n,m)
-    print(mat)
-    resolverF(mat,n,m)
-    resolverC(mat,n,m)
-
-if __name__=="__main__":
-    main()
